@@ -10,6 +10,7 @@ import modules.common as cm
 import modules.config as c
 import modules.patch as patch
 import modules.pdfium as p
+import modules.questmind as questmind
 
 
 # -----------------------------------------------------------------------------
@@ -248,6 +249,9 @@ def run_task_patch():
         l.bullet("Applied: skia", l.GREEN)
     else:
         l.bullet("Skipped: skia", l.PURPLE)
+
+    # Questmind's patch (modules/questmind.py)
+    questmind.apply(source_dir)
 
     l.ok()
 
